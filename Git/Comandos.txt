@@ -1,0 +1,12 @@
+Subir cambios Ejemplo
+    - git add .
+    - git commit -m "Mensaje de commit"
+    - git push origin main
+
+
+Añadir cambios
+    - Añadir todos los cambios
+        git add . 
+    - Añadir solo los cambios que quieres del fichero que selecciones
+        git add carpeta
+Añadir Commit 

@@ -1,0 +1,34 @@
+Git add es uno de los comandos fundamentales de Git. Se usa para añadir archivos al área de preparación (staging area) antes de hacer un git commit. Aunque su uso básico es conocido (git add archivo.txt), tiene muchas opciones útiles.
+| Opción                   | Función                                                                                                            |                                                                     |
+| ------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------- |
+| `.`                      | Añade todos los cambios (nuevos, modificados) en el directorio actual y subdirectorios.                            |                                                                     |
+| `-A` / `--all`           | Añade todos los archivos cambiados (incluye eliminaciones). Equivalente a `git add .` y `git add -u` combinados.   |                                                                     |
+| `-u`                     | Añade archivos modificados y eliminados, pero **no archivos nuevos** (no rastreados).                              |                                                                     |
+| `-n` / `--dry-run`       | Muestra qué archivos se añadirían al staging **sin hacerlo realmente**.                                            |                                                                     |
+| `-v`                     | Muestra los archivos añadidos al staging (modo "verbose"). Útil para ver qué pasa.                                 |                                                                     |
+| `-p` / `--patch`         | Permite añadir **por partes** (hunks) dentro de un archivo. Útil para hacer commits más limpios.                   |                                                                     |
+| `-i` / `--interactive`   | Inicia un asistente interactivo para seleccionar qué añadir al staging. Más completo que `-p`.                     |                                                                     |
+| `-N` / `--intent-to-add` | Marca un archivo nuevo como "intención de añadir", aunque aún esté vacío. (Útil en flujos avanzados o revisiones). |                                                                     |
+| `--ignore-errors`        | Continúa añadiendo incluso si hay errores (no recomendado salvo que sepas lo que haces).                           |                                                                     |
+| \`--chmod=(+x            | -x)\`                                                                                                              | Cambia el bit de ejecución del archivo (por ejemplo, para scripts). |
+| `--renormalize`          | Re-aplica la configuración de `core.autocrlf` para normalizar fin de línea (CRLF vs LF).                           |                                                                     |
+| `-f` / `--force`         | Fuerza añadir archivos ignorados (por `.gitignore`). ⚠️ Úsalo con precaución.                                      |                                                                     |
+
+
+
+📌 Ejemplos prácticos
+Añadir todo:
+
+git add .
+Añadir solo archivos modificados y eliminados (no nuevos):
+
+git add -u
+Añadir todo el árbol de trabajo (equivale a combinar . y -u):
+
+git add -A
+Añadir cambios parciales en un archivo:
+
+git add -p archivo.txt
+Ver qué se añadiría sin hacerlo:
+
+git add -n .
