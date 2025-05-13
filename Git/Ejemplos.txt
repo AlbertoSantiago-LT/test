@@ -13,3 +13,11 @@ Añadir cambios
     - Añadir solo los cambios que quieres del fichero que selecciones
         git add carpeta
 Añadir Commit 
+    - Añadir mensaje del commit
+        git commit -m "Mensaje"
+Obtener cambios de repositorio
+    - Obtener cambios
+        git pul origin rama-que-quieres
+Subir cambios
+    - Subir todos los cambios
+        git push origin rama-que-quieres-subir

@@ -1,0 +1,3 @@
+Si cambias el nombre en el repo de github ya no tendra la misma url del repo
+Para cambiar la url del repositorio local para que sea igual a la del repo de git 
+    - $ git remote set-url origin https://github.com/AlbertoSantiago-LT/test.git

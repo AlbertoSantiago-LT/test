@@ -1,0 +1,5 @@
+Los commits que hagas antes del push lo puedes subir desde otra rama es decir 
+tienes cambios en la rama main y no lo quieres subir desde main puedes crear y cambiar de rama para subir los cambios 
+
+Puedes crear varios commits y subirlos todos a la vez 
+
