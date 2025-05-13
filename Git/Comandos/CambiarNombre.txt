@@ -1,0 +1,65 @@
+
+Cambiar el nombre de un repositorio **clonado localmente** en Git es muy fácil, pero es importante distinguir **qué quieres cambiar exactamente**:
+
+## ✅ OPCIÓN 1: Cambiar el **nombre de la carpeta local**
+
+Esto **no afecta al repositorio en GitHub, GitLab o CodeCommit**, solo a tu máquina.
+
+```bash
+mv nombre-actual nuevo-nombre
+```
+
+Por ejemplo:
+
+```bash
+mv mi-repo-clonado mi-repo-renombrado
+```
+
+Después puedes entrar a la carpeta con:
+
+```bash
+cd mi-repo-renombrado
+```
+
+---
+
+## ✅ OPCIÓN 2: Cambiar el nombre del **repositorio remoto (origin)**
+
+Si quieres que tu repositorio local apunte a un **nuevo repositorio remoto** (por ejemplo, si cambiaste el nombre en GitHub o CodeCommit), haz esto:
+
+### 1. Ver la URL actual del remoto:
+
+```bash
+git remote -v
+```
+
+Verás algo como:
+
+```
+origin  https://git-codecommit.us-east-1.amazonaws.com/v1/repos/mi-repo (fetch)
+origin  https://git-codecommit.us-east-1.amazonaws.com/v1/repos/mi-repo (push)
+```
+
+### 2. Cambiar la URL del repositorio remoto:
+
+```bash
+git remote set-url origin NUEVA_URL
+```
+
+Ejemplo con AWS CodeCommit:
+
+```bash
+git remote set-url origin https://git-codecommit.us-east-1.amazonaws.com/v1/repos/nuevo-nombre-repo
+```
+
+---
+
+## 🧼 (Opcional) Verifica que se actualizó correctamente:
+
+```bash
+git remote -v
+```
+
+---
+
+
