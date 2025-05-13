@@ -1,0 +1,44 @@
+git commit guarda los cambios que están en el staging area 
+(preparados con git add) en el historial del repositorio, creando un snapshot permanente.
+
+| Opción                      | Función                                                                                                                      |
+| --------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| `-m "mensaje"`              | Especifica el mensaje del commit directamente desde la línea de comandos.                                                    |
+| `-a`                        | Añade automáticamente todos los archivos modificados y rastreados **antes de hacer el commit** (no incluye nuevos archivos). |
+| `--amend`                   | Modifica el último commit (mensaje o archivos). Muy útil para corregir errores sin crear uno nuevo.                          |
+| `-v`                        | Muestra el diff de los cambios en el editor al hacer commit. Útil para revisar.                                              |
+| `--no-edit`                 | Usa el mismo mensaje del commit anterior al hacer `--amend`, sin abrir el editor.                                            |
+| `--allow-empty`             | Permite hacer un commit sin cambios (útil para marcar un punto en el historial).                                             |
+| `--allow-empty-message`     | Permite commits sin mensaje. No recomendado salvo en casos muy específicos.                                                  |
+| `--author="Nombre <email>"` | Especifica manualmente el autor del commit (sin cambiar la configuración global).                                            |
+| `--date="fecha"`            | Establece manualmente la fecha del commit. Útil para scripts o reproducir cambios.                                           |
+| `--squash <commit>`         | Prepara un commit para hacer *squash* de otro. Se usa dentro de flujos como `rebase`.                                        |
+| `--fixup <commit>`          | Marca el commit como una corrección para otro. Usado con `rebase --autosquash`.                                              |
+| `--reset-author`            | Al hacer `--amend`, reemplaza el autor anterior por el actual.                                                               |
+| `--cleanup=<modo>`          | Controla cómo Git limpia los comentarios en el mensaje del commit (`strip`, `whitespace`, `verbatim`, etc.).                 |
+| `--quiet` / `-q`            | Minimiza la salida (salida silenciosa).                                                                                      |
+| `--verbose`                 | Muestra detalles del diff al hacer el commit.                                                                                |
+
+🔧 Ejemplos prácticos
+Commit rápido con mensaje
+    - git commit -m "Añadir funcionalidad de login"
+
+Commit con auto-add de archivos modificados (pero no nuevos)
+    - git commit -a -m "Corregir errores menores"
+
+Modificar el último commit (mensaje o archivos)
+    - git commit --amend
+Corregir solo el mensaje del último commit
+    - git commit --amend -m "Mensaje corregido"
+Hacer un commit vacío
+    - git commit --allow-empty -m "Marca de implementación inicial"
+Forzar autor específico
+    - git commit --author="Ana Dev <ana@ejemplo.com>" -m "Commit con autor personalizado"
+
+🛠️ Flujo común para arreglar el último commit
+Cambias algo que olvidaste.
+
+Lo agregas:
+    - git add archivo-olvidado.txt
+Y lo metes en el último commit sin crear uno nuevo:
+    - git commit --amend --no-edit

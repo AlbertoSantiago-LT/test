@@ -3,6 +3,9 @@ Subir cambios Ejemplo
     - git commit -m "Mensaje de commit"
     - git push origin main
 
+Crear una rama
+    - Te crea la rama y te cambia esa rama
+        git checkout -b Nueva-Rama-Nombre
 
 Añadir cambios
     - Añadir todos los cambios
